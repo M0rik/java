@@ -1,0 +1,144 @@
+
+class Animal{
+    String name;
+    public Animal(String name) {
+        this.name = name;
+    }
+    public void info() {
+        System.out.println("Животное: " + name);
+    }
+}
+class Cat extends Animal {
+    public Cat(String name) {
+        super(name);
+    }
+    @Override
+    public void info() {
+        System.out.println("Имя кота: " + name);
+    }
+}
+class Dog extends Animal {
+    public Dog(String name) {
+        super(name);
+    }    @Override
+    public void info() {
+        System.out.println("Имя собаки: " + name);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Animal cat = new Cat("Пушок");
+        cat.info();
+        Animal dog = new Dog("Бобик");
+        dog.info();
+    }
+}
+
+/*
+class Animal {
+    String name;
+    public Animal(String name) {
+        this.name = name;
+    }
+    public void info() {
+        System.out.println("Животное: " + name);
+    }
+    public void run(int distance) {
+        System.out.println(name + " пробежал " + distance + " м.");
+    }
+    public void swim(int distance) {
+        System.out.println(name + " проплыл " + distance + " м.");
+    }
+}
+class Cat extends Animal {
+    public Cat(String name) {
+        super(name);
+    }
+    @Override
+    public void info() {
+        System.out.println("Имя кота: " + name);
+    }
+}class Dog extends Animal {
+    public Dog(String name) {
+        super(name);
+    }    @Override
+    public void info() {
+        System.out.println("Имя собаки: " + name);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Animal cat = new Cat("Пушок");
+        cat.info();
+        cat.run(100);
+        cat.swim(0);
+        System.out.println("Коты не любят воду");
+        Animal dog = new Dog("Бобик");
+        dog.info();
+        dog.run(150);
+        dog.swim(50);
+    }
+}
+*/
+
+/*
+
+class Animal {
+    String name;
+    int maxRunDistance;
+    int maxSwimDistance;
+    public Animal(String name, int maxRunDistance, int maxSwimDistance) {
+        this.name = name;
+        this.maxRunDistance = maxRunDistance;
+        this.maxSwimDistance = maxSwimDistance;
+    }
+    public void info() {
+        System.out.println("Животное: " + name);
+    }
+    public void run(int distance) {
+        if (distance <= maxRunDistance) {
+            System.out.println(name + " пробежал " + distance + " м.");
+        } else {
+            System.out.println(name + " не может пробежать такое расстояние");
+        }
+    }
+    public void swim(int distance) {
+        if (maxSwimDistance == 0) {
+            System.out.println(name + " не умеет плавать");
+        } else if (distance <= maxSwimDistance) {
+            System.out.println(name + " проплыл " + distance + " м.");
+        } else {
+            System.out.println(name + " не может проплыть такое расстояние");
+        }
+    }
+}
+class Cat extends Animal {
+    public Cat(String name) {
+        super(name, 200, 0);
+    }    @Override
+    public void info() {
+        System.out.println("Имя кота: " + name);
+    }
+}
+class Dog extends Animal {
+    public Dog(String name) {
+        super(name, 500, 10);
+    }
+    @Override
+    public void info() {
+        System.out.println("Имя собаки: " + name);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Animal cat = new Cat("Пушок");
+        cat.info();
+        cat.run(100);
+        cat.swim(0);
+        Animal dog = new Dog("Бобик");
+        dog.info();
+        dog.run(150);
+        dog.swim(5);
+    }
+}
+*/
