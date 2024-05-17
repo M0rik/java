@@ -1,0 +1,58 @@
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+public class Main {
+    public static void main(String[] args) {
+        String[] words = {"один", "два", "три", "два", "один", "четыре", "пять", "три", "шесть", "один",};
+        Set<String> uniqueWords = new HashSet<>();
+        Map<String, Integer> wordCount = new HashMap<>();
+        for (String word : words) {
+            uniqueWords.add(word);
+            wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
+        }
+        System.out.println("Unique words:");
+        for (String uniqueWord : uniqueWords) {
+            System.out.println(uniqueWord);
+        }
+        System.out.println("\nWord count:");
+        for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+    }
+}
+
+
+/*
+public class PhoneBook {
+    private Map<String, Set<String>> phoneBook;
+    public PhoneBook() {
+        phoneBook = new HashMap<>();
+    }
+    public void add(String lastName, String phoneNumber) {
+        if (phoneBook.containsKey(lastName)) {
+            phoneBook.get(lastName).add(phoneNumber);
+        } else {
+            Set<String> phoneNumbers = new HashSet<>();
+            phoneNumbers.add(phoneNumber);
+            phoneBook.put(lastName, phoneNumbers);
+        }
+    }
+    public Set<String> get(String lastName) {
+        return phoneBook.getOrDefault(lastName, new HashSet<>());
+    }
+    public static void main(String[] args) {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Иванов", "1987654321");
+        phoneBook.add("Петров", "9393938748");
+        phoneBook.add("Краснов", "5555555555");
+        phoneBook.add("Иванов", "7777777777");
+        System.out.println("Номера телефонов для фамилии Иванов: " + phoneBook.get("Иванов"));
+        System.out.println("Номера телефонов для фамилии Петров: " + phoneBook.get("Петров"));
+        System.out.println("Номера телефонов для фамилии Краснов: " + phoneBook.get("Краснов"));
+        System.out.println("Номера телефонов для фамилии Комар (не найдено): " + phoneBook.get("Комар"));
+    }
+}
+*/
